@@ -13,11 +13,11 @@ from sqlalchemy.orm import sessionmaker
 #from flask_sqlalchemy import SQLAlchemy
 
 
-d={'user':'simplon',
+d={'user':'remi',
    'pwd':'simplon',
    'host':'localhost'}
 
-db_string = "postgresql://"+d['user']+":"+d['pwd']+"@"+d['host']+':5432/housing'
+db_string = "postgres://"+d['user']+":"+d['pwd']+"@"+d['host']+':5432/housing'
 
 engine = create_engine(db_string)
 
