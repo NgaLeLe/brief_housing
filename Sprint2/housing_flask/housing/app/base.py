@@ -10,13 +10,14 @@ Created on Thu Jun 17 13:45:44 2021
 from sqlalchemy import create_engine  
 from sqlalchemy.ext.declarative import declarative_base  
 from sqlalchemy.orm import sessionmaker
+#from flask_sqlalchemy import SQLAlchemy
 
 
-d={'user':'remi',
+d={'user':'simplon',
    'pwd':'simplon',
    'host':'localhost'}
 
-db_string = "postgres://"+d['user']+":"+d['pwd']+"@"+d['host']+':5432/housing'
+db_string = "postgresql://"+d['user']+":"+d['pwd']+"@"+d['host']+':5432/housing'
 
 engine = create_engine(db_string)
 
