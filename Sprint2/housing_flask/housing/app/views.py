@@ -9,7 +9,7 @@ import seaborn as sns
 from app import models
 
 
-engine = create_engine('mysql+pymysql://rafik:simplon@localhost/startups50')
+#engine = create_engine('mysql+pymysql://rafik:simplon@localhost/startups50')
 
 # C'est ici qu'on demande à notre appli flask d'acheminer toutes les demandes d'URL à la racine vers la fonction index()
 # A chaque fois qu'on ouvrira un navigateur pour accéder à l'indexe, c'est cette fonction qui sera appelé
@@ -39,4 +39,12 @@ def predict():
     predict = models.predict(mi, nop)
     date = datetime.datetime.now().strftime("%x %X")
     return render_template( 'predict.html', date=date, nop=nop, mi=mi, predict=predict)
+    
+@app.route('/ajout_bien', methods = ['POST', 'GET'])
+def ajout_bien():
+    #nop = request.form['ocean']
+    #mi = request.form['revenu']
+    #predict = models.predict(mi, nop)
+    date = datetime.datetime.now().strftime("%x %X")
+    return render_template( 'Pages/form_ajout_bien.html')
     
